@@ -14,7 +14,7 @@ class Mgp_scrippet extends Fieldframe_Fieldtype {
 
     var $info = array(
         'name'             => 'Scrippet',
-        'version'          => '1.0.0',
+        'version'          => '1.0.1',
         'desc'             => 'Provides a formatted screenplay field type',
         'docs_url'         => 'http://www.thewatchmakerproject.com/'
     );
@@ -82,7 +82,7 @@ class Mgp_scrippet extends Fieldframe_Fieldtype {
 		$replace   = array('', '&', '&#46;&#46;&#46;', '&#45;&#45;');
 		
 		// Sceneheaders must start with INT, EXT, or EST
-		$pattern[] = '/(INT|EXT|[^a-zA-Z0-9]EST)([\.\-\s]+?)(.+?)([A-Za-z0-9\)\s\.])\n/';
+		$pattern[] = '/\n(INT|EXT|[^a-zA-Z0-9]EST)([\.\-\s]+?)(.+?)([A-Za-z0-9\)\s\.])\n/';
 		$replace[] = '<p class="sceneheader">\1\2\3\4</p>' . "\n";
 		
 		// Catches transitions
